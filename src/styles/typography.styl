@@ -1,0 +1,47 @@
+@require 'mixins'
+@require 'colors'
+
+headers = h1 h2 h3 h4 h5 h6
+
+@font-face
+    font-family 'something'
+    font-display auto
+    // src url('~assets/fonts/*.woff') format('woff')
+    font-weight 300
+    font-style normal
+
+@font-face
+    font-family 'something'
+    font-display auto
+    font-weight 500
+    // src url('~assets/fonts/*.woff') format('woff')
+    font-style normal
+
+@font-face
+    font-family 'something'
+    font-display auto
+    // src url('~assets/fonts/*.woff') format('woff')
+    font-weight 600
+    font-style normal
+
+@font-face
+    font-family 'something'
+    font-display auto
+    // src url('~assets/fonts/*.woff') format('woff')
+    font-weight 700
+    font-style normal
+
+html
+    font-size calc(14px + (16 - 14) * (100vw - 320px) / 1600)
+
+body, button, input, textarea
+    color black
+    font-family 'something', sans-serif
+
+for h in headers
+    {h}
+        fontsize('%s00' % h)
+
+{join(', ', headers)}
+    margin 0
+    font-weight normal
