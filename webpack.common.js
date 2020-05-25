@@ -22,7 +22,7 @@ exports.config = {
                         options: exports.scopedStylesOptions,
                     },
                     {
-                        loader: 'awesome-typescript-loader',
+                        loader: 'ts-loader',
                         options: {
                             silent: true,
                         },
