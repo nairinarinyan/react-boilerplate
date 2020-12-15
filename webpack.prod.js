@@ -3,6 +3,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const { config, scopedStylesOptions } = require('./webpack.common');
 
@@ -34,7 +35,8 @@ module.exports = merge(config, {
     optimization: {
         minimizer: [
             new TerserJSPlugin({}),
-            new OptimizeCSSAssetsPlugin({}),
+            new CssMinimizerPlugin(),
+            // new OptimizeCSSAssetsPlugin({}),
             new CompressionPlugin()
         ],
     },
