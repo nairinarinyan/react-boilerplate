@@ -4,3 +4,5 @@ build
 .vscode
 firebase-debug.log
 .firebase
+.DS_Store
+index.js
