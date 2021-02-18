@@ -58,7 +58,7 @@ var copySource = function (appName, appDir) { return __awaiter(void 0, void 0, v
         sourceDir = path_1.join(__dirname, 'source');
         return [2 /*return*/, fs_extra_1.copy(sourceDir, appDir, {
                 filter: function (src, dest) {
-                    return !~src.indexOf('node_modules');
+                    return !~src.indexOf('source/node_modules');
                 }
             })];
     });
@@ -92,7 +92,7 @@ var installDeps = function (appDir) {
     process.chdir(appDir);
     return new Promise(function (resolve, reject) {
         child_process_1.exec('npm i', function (err, stdout, stderr) {
-            if (err || stderr) {
+            if (err || /err/i.test(stderr)) {
                 return reject(err);
             }
             resolve(stdout);

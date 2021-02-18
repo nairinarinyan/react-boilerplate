@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { join } from 'path';
-import { copy, mkdir, writeFile, readFile, rename } from 'fs-extra';
+import { copy, mkdir, writeFile, readFile, rename, readdir } from 'fs-extra';
 import { exec } from 'child_process';
 import ora from 'ora';
 
@@ -20,7 +20,7 @@ const copySource = async (appName: string, appDir: string) => {
 
     return copy(sourceDir, appDir, {
         filter(src: string, dest: string) {
-            return !~src.indexOf('node_modules');
+            return !~src.indexOf('source/node_modules');
         }
     });
 };
@@ -47,7 +47,7 @@ const installDeps = (appDir: string) => {
 
     return new Promise((resolve, reject) => {
         exec('npm i', (err, stdout, stderr) => {
-            if (err || stderr) {
+            if (err || /err/i.test(stderr)) {
                 return reject(err);
             }
 
