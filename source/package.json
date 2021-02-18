@@ -1,0 +1,53 @@
+{
+    "name": "rename_this",
+    "version": "0.0.1",
+    "description": "change_this",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack serve --config webpack.dev.js",
+        "build": "rm -rf build && webpack --config webpack.prod.js"
+    },
+    "author": "change_this",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "immer": "^8.0.1",
+        "lodash": "^4.17.20",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-router-dom": "^5.2.0",
+        "react-scoped-styles": "^0.3.2",
+        "reactive-blocs": "0.0.70",
+        "rxjs": "^6.6.3"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.165",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "@types/react-router-dom": "^5.1.5",
+        "@types/webpack": "^4.41.22",
+        "compression-webpack-plugin": "^7.0.0",
+        "css-loader": "^3.6.0",
+        "css-minimizer-webpack-plugin": "^1.1.5",
+        "dotenv": "^8.2.0",
+        "file-loader": "^5.1.0",
+        "html-webpack-plugin": "^5.0.0-alpha.16",
+        "mini-css-extract-plugin": "^1.3.3",
+        "optimize-css-assets-webpack-plugin": "^5.0.4",
+        "raw-loader": "^4.0.1",
+        "source-map-loader": "^0.2.4",
+        "style-loader": "^1.2.1",
+        "stylus": "^0.54.8",
+        "stylus-loader": "^3.0.2",
+        "svgo": "^1.3.2",
+        "svgson": "^4.1.0",
+        "terser": "^4.8.0",
+        "ts-loader": "^8.0.12",
+        "typescript": "^4.1.3",
+        "url-loader": "^3.0.0",
+        "webpack": "^5.10.2",
+        "webpack-cli": "^4.2.0",
+        "webpack-dev-server": "^3.11.0",
+        "webpack-merge": "^4.2.2",
+        "xml-formatter": "^1.2.1"
+    }
+}

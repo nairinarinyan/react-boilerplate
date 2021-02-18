@@ -15,7 +15,7 @@ FROM nginx:alpine
 
 RUN rm /etc/nginx/conf.d/default.conf
 COPY --from=builder /opt/frontend/conf/nginx.conf /etc/nginx/
-COPY --from=builder /opt/frontend/conf/_rename_this.conf /etc/nginx/conf.d/
+COPY --from=builder /opt/frontend/conf/rename_this.conf /etc/nginx/conf.d/
 COPY --from=builder /opt/frontend/build /usr/share/nginx/html
 
 EXPOSE 80

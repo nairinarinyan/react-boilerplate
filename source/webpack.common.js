@@ -1,8 +1,17 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const env = process.env.ENVIRONMENT || 'LOCAL';
+
+const envFiles = {
+    LOCAL: '.env.local',
+    TEST: '.env.test',
+    PROD: '.env.prod',
+};
+
+require('dotenv').config({ path: path.join('env', envFiles[env]) });
 
 exports.scopedStylesOptions = {
-    globalsPrefix: ['uq'],
+    globalsPrefix: ['change_this'],
 };
 
 exports.config = {
