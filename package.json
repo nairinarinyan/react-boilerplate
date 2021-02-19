@@ -1,6 +1,6 @@
 {
   "name": "create-bomb-app",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Create bomba react app yo",
   "bin": "index.js",
   "scripts": {
