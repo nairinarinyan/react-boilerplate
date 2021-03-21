@@ -80,6 +80,7 @@ exports.config = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
+            'react/jsx-runtime': require.resolve('react/jsx-runtime'),
             shared: path.resolve(__dirname, './src/shared'),
             assets: path.resolve(__dirname, './src/assets'),
             styles: path.resolve(__dirname, './src/styles'),
