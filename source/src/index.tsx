@@ -1,7 +1,7 @@
 import { render } from 'react-dom';
 import { Router } from '@reach/router';
 import iconDefinitions from '!!raw-loader!./shared/components/icons/icon-definitions.svg';
-import { Home } from './home/home';
+import { Home } from 'home/home';
 
 import './styles/styles.styl';
 

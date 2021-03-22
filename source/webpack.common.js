@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const env = process.env.ENVIRONMENT || 'LOCAL';
 
 const envFiles = {
@@ -81,14 +82,8 @@ exports.config = {
         extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
             'react/jsx-runtime': require.resolve('react/jsx-runtime'),
-            shared: path.resolve(__dirname, './src/shared'),
-            assets: path.resolve(__dirname, './src/assets'),
-            styles: path.resolve(__dirname, './src/styles'),
-            layout: path.resolve(__dirname, './src/layout'),
-            auth: path.resolve(__dirname, './src/auth'),
-            user: path.resolve(__dirname, './src/user'),
-            lang: path.resolve(__dirname, './src/lang'),
         },
+        plugins: [new TsconfigPathsPlugin()]
     },
     optimization: {
         splitChunks: {
