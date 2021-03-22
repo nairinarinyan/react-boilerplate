@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { join } from 'path';
-import { copy, mkdir, writeFile, readFile, rename, readdir } from 'fs-extra';
+import { copy, mkdir, writeFile, readFile, rename } from 'fs-extra';
 import { exec } from 'child_process';
 import ora from 'ora';
 
@@ -23,6 +23,12 @@ const copySource = async (appName: string, appDir: string) => {
             return !~src.indexOf('source/node_modules');
         }
     });
+};
+
+const renameGitignore = async (appDir: string) => {
+    const sourcePath = join(appDir, '_.gitignore');
+    const targetPath = join(appDir, '.gitignore');
+    return rename(sourcePath, targetPath);
 };
 
 const replaceNameInFiles = async (appName: string, appDir: string) => {
@@ -97,6 +103,7 @@ const run = async (appName: string) => {
     try {
         renameSpinner.start();
         await replaceNameInFiles(appName, appDir);
+        await renameGitignore(appDir);
         renameSpinner.text = 'Project name set'
         renameSpinner.succeed();
     } catch (err) {
