@@ -3,6 +3,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const zlib = require('zlib');
 
 const { config, scopedStylesOptions } = require('./webpack.common');
 
@@ -26,17 +27,26 @@ module.exports = merge(config, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].css',
+            filename: '[name].[contenthash:8].css',
             chunkFilename: '[id].css',
             ignoreOrder: false,
         }),
     ],
     optimization: {
         minimizer: [
-            new TerserJSPlugin({}),
+            new TerserJSPlugin({
+                extractComments: false
+            }),
             new CssMinimizerPlugin(),
-            // new OptimizeCSSAssetsPlugin({}),
-            new CompressionPlugin()
+            new CompressionPlugin({
+                algorithm: 'brotliCompress',
+                filename: '[path][base].br',
+                compressionOptions: {
+                    params: {
+                        [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+                    },
+                },
+            })
         ],
     },
 });

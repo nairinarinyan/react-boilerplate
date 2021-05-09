@@ -18,7 +18,7 @@ exports.scopedStylesOptions = {
 exports.config = {
     entry: './src/index.tsx',
     output: {
-        filename: '[name].[fullhash:8].js',
+        filename: '[name].[contenthash:8].js',
         path: path.resolve(__dirname, 'build'),
         publicPath: '/'
     },
