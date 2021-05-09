@@ -52,7 +52,7 @@ const installDeps = (appDir: string) => {
     process.chdir(appDir);
 
     return new Promise((resolve, reject) => {
-        exec('npm i --legacy-peer-deps', (err, stdout, stderr) => {
+        exec('npm ci', (err, stdout, stderr) => {
             if (err || /err/i.test(stderr)) {
                 return reject(err);
             }

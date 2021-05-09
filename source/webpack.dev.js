@@ -20,5 +20,4 @@ module.exports = merge(config, {
             react: require.resolve('react'),
         },
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
 });
