@@ -15,7 +15,7 @@
         "lodash": "^4.17.21",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-scoped-styles": "^0.3.2",
+        "react-scoped-styles": "^0.3.3",
         "reactive-blocs": "^0.0.72",
         "rxjs": "^7.0.0"
     },
