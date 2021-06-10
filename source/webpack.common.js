@@ -12,7 +12,7 @@ const envFiles = {
 require('dotenv').config({ path: path.join('env', envFiles[env]) });
 
 exports.scopedStylesOptions = {
-    globalsPrefix: ['change_this'],
+    include: ['change_this'],
 };
 
 exports.config = {

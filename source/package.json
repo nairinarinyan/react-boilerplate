@@ -15,7 +15,6 @@
         "lodash": "^4.17.21",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-scoped-styles": "^0.3.3",
         "reactive-blocs": "^0.0.72",
         "rxjs": "^7.0.0"
     },
@@ -33,6 +32,7 @@
         "html-webpack-plugin": "^5.3.1",
         "mini-css-extract-plugin": "^1.6.0",
         "raw-loader": "^4.0.2",
+        "react-scoped-styles": "^0.5.0",
         "source-map-loader": "^2.0.1",
         "style-loader": "^2.0.0",
         "stylus": "^0.54.8",
